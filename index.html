@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão IA | Você decide o futuro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div class="logo">alura<span>+</span></div>
+        <span class="categoria">PROJETO INTERATIVO</span>
+    </header>
+
+    <main class="container">
+        <section id="inicio" class="card">
+            <span class="tag">MISSÃO ESPECIAL</span>
+
+            <h1>Você decide o <span>futuro da IA</span></h1>
+
+            <p>
+                A inteligência artificial está transformando o mundo.
+                Suas escolhas podem mudar o futuro da humanidade.
+                Você está pronto para essa missão?
+            </p>
+
+            <div class="info">
+                <span>💻 Tecnologia</span>
+                <span>🧠 4 decisões</span>
+                <span>🚀 Sua escolha importa</span>
+            </div>
+
+            <button class="botao" onclick="iniciarJogo()">
+                Começar missão →
+            </button>
+        </section>
+
+        <section id="jogo" class="card escondido">
+            <div class="progresso">
+                <span id="contador">Pergunta 1 de 4</span>
+
+                <div class="barra">
+                    <div id="preenchimento"></div>
+                </div>
+            </div>
+
+            <h2 id="pergunta"></h2>
+            <div id="alternativas"></div>
+        </section>
+
+        <section id="resultado" class="card escondido">
+            <span class="tag">MISSÃO FINALIZADA</span>
+
+            <h2>Seu futuro começa agora!</h2>
+            <p id="texto-resultado"></p>
+
+            <div id="pontuacao" class="pontuacao"></div>
+
+            <button class="botao" onclick="iniciarJogo()">
+                ↻ Jogar novamente
+            </button>
+        </section>
+
+        <footer>
+            <p>Projeto educacional • Inteligência Artificial e Sociedade</p>
+        </footer>
+    </main>
+</body>
+</html>
