@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --fundo: #071426;
+    --card: #101f35;
+    --azul: #008cff;
+    --roxo: #7b2cff;
+    --branco: #ffffff;
+    --cinza: #b7c5d9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: var(--fundo);
+    color: var(--branco);
+}
+
+.topo {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 1px solid #26364d;
+    background: #09182b;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--azul);
+}
+
+.categoria {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--cinza);
+}
+
+.container {
+    width: 90%;
+    max-width: 760px;
+    margin: 65px auto 30px;
+}
+
+.card {
+    padding: 42px;
+    border: 1px solid #293b56;
+    border-radius: 16px;
+    background: var(--card);
+    box-shadow: 0 15px 45px #0003;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: #172e50;
+    color: #63b7ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 25px 0 18px;
+    font-size: clamp(30px, 6vw, 46px);
+    line-height: 1.2;
+}
+
+h1 span {
+    color: #4aa8ff;
+}
+
+h2 {
+    margin: 25px 0 18px;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+p {
+    color: var(--cinza);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.info span {
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: #192c45;
+    color: #dce8f8;
+    font-size: 12px;
+}
+
+.botao {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 7px;
+    background: var(--azul);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    background: #1675d1;
+    transform: translateY(-2px);
+}
+
+.escondido {
+    display: none !important;
+}
+
+.progresso {
+    color: #67baff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.barra {
+    height: 6px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background: #293b56;
+    overflow: hidden;
+}
+
+#preenchimento {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--azul), var(--roxo));
+    transition: width 0.3s;
+}
+
+#alternativas {
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.alternativa {
+    padding: 17px;
+    border: 1px solid #344761;
+    border-radius: 8px;
+    background: #162840;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.alternativa:hover {
+    border-color: var(--azul);
+    background: #1c3655;
+}
+
+.pontuacao {
+    margin: 22px 0;
+    padding: 18px;
+    border-radius: 8px;
+    background: #192e49;
+    color: #69baff;
+    font-weight: 700;
+    text-align: center;
+}
+
+footer {
+    margin-top: 28px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .topo {
+        padding: 0 5%;
+    }
+
+    .categoria {
+        font-size: 9px;
+    }
+
+    .container {
+        margin-top: 30px;
+    }
+
+    .card {
+        padding: 25px 20px;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+}
+3. JavaScript — script.js
+javascript
+
+const perguntas = [
+    {
+        pergunta: "1. A IA começa a substituir pessoas no mercado de trabalho. O que você faria?",
+        alternativas: [
+            {
+                texto: "A) Incentivar cursos e a capacitação profissional.",
+                pontos: 2
+            },
+            {
+                texto: "B) Deixar a tecnologia avançar sem regras.",
+                pontos: 0
+            },
+            {
+                texto: "C) Proibir toda inteligência artificial.",
+                pontos: 1
+            }
+        ]
+    },
+    {
+        pergunta: "2. Uma empresa utiliza dados pessoais para treinar sua IA. Qual é sua decisão?",
+        alternativas: [
+            {
+                texto: "A) Permitir o uso de todos os dados.",
+                pontos: 0
+            },
+            {
+                texto: "B) Exigir consentimento e proteção dos dados.",
+                pontos: 2
+            },
+            {
+                texto: "C) Ignorar o assunto.",
+                pontos: 1
+            }
+        ]
+    },
+    {
+        pergunta: "3. Uma IA espalha uma notícia falsa na internet. O que fazer?",
+        alternativas: [
+            {
+                texto: "A) Compartilhar a notícia imediatamente.",
+                pontos: 0
+            },
+            {
+                texto: "B) Verificar as fontes antes de compartilhar.",
+                pontos: 2
+            },
+            {
+                texto: "C) Acreditar sem questionar.",
+                pontos: 1
+            }
+        ]
+    },
+    {
+        pergunta: "4. Como deve ser a inteligência artificial do futuro?",
+        alternativas: [
+            {
+                texto: "A) Sem limites ou fiscalização.",
+                pontos: 0
+            },
+            {
+                texto: "B) Segura, ética e supervisionada por pessoas.",
+                pontos: 2
+            },
+            {
+                texto: "C) Presente em tudo, sem avaliar os riscos.",
+                pontos: 1
+            }
+        ]
+    }
+];
+
+let atual = 0;
+let pontos = 0;
+
+const inicio = document.getElementById("inicio");
+const jogo = document.getElementById("jogo");
+const resultado = document.getElementById("resultado");
+
+function iniciarJogo() {
+    atual = 0;
+    pontos = 0;
+
+    inicio.classList.add("escondido");
+    resultado.classList.add("escondido");
+    jogo.classList.remove("escondido");
+
+    mostrarPergunta();
+}
+
+function mostrarPergunta() {
+    const dados = perguntas[atual];
+
+    document.getElementById("pergunta").textContent =
+        dados.pergunta;
+
+    document.getElementById("contador").textContent =
+        `Pergunta ${atual + 1} de ${perguntas.length}`;
+
+    document.getElementById("preenchimento").style.width =
+        `${(atual / perguntas.length) * 100}%`;
+
+    const area = document.getElementById("alternativas");
+    area.innerHTML = "";
+
+    dados.alternativas.forEach(opcao => {
+        const botao = document.createElement("button");
+
+        botao.className = "alternativa";
+        botao.textContent = opcao.texto;
+
+        botao.addEventListener("click", () => {
+            pontos += opcao.pontos;
+            atual++;
+
+            if (atual < perguntas.length) {
+                mostrarPergunta();
+            } else {
+                mostrarResultado();
+            }
+        });
+
+        area.appendChild(botao);
+    });
+}
+
+function mostrarResultado() {
+    jogo.classList.add("escondido");
+    resultado.classList.remove("escondido");
+
+    document.getElementById("preenchimento").style.width = "100%";
+
+    let mensagem;
+
+    if (pontos >= 7) {
+        mensagem = "Excelente! Você prioriza uma IA ética e responsável, pensando no bem-estar da sociedade.";
+    } else if (pontos >= 4) {
+        mensagem = "Boa missão! Você reconhece as possibilidades da IA, mas ainda existem riscos que merecem atenção.";
+    } else {
+        mensagem = "O futuro precisa de reflexão! É importante considerar os impactos sociais e os riscos da inteligência artificial.";
+    }
+
+    document.getElementById("texto-resultado").textContent = mensagem;
+
+    document.getElementById("pontuacao").textContent =
+        `Sua pontuação: ${pontos} de 8 pontos`;
+}
